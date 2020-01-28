@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 
 const GET_USERS = gql`
     query getGreeting($page: Int!) {
-        users(page:$page) {
+        users(page:$page,first:20) {
             data {
                 id
                 name
