@@ -1,0 +1,350 @@
+@import "mixins";
+@import "variables";
+
+.btn-link-yellow {
+  padding: 1.7rem 3.4rem;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  max-width: 30rem;
+  background: $yellow-primary;
+  margin: unset;
+  font-family: "Roboto Slab", serif;
+  color: $white;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include border-radius(5rem);
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    color: $white;
+    background: $dark-blue;
+    .svg-icon-btn {
+      @include transform(translateX(1rem));
+      svg {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+  &:focus {
+    color: $white;
+    outline: none;
+  }
+  &:active {
+    @include transform(scale(0.98));
+  }
+  .svg-icon-btn {
+    display: none;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    margin-top: -0.5rem;
+    width: 3rem;
+    @include transition(all, 0.2s, ease-in-out);
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 2.8rem 3.6rem;
+    width: auto;
+
+    .svg-icon-btn {
+      display: inline-block;
+    }
+  }
+  @media (min-width: 1200px) {
+  }
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1600px) {
+  }
+  @media (min-width: 1920px) {
+  }
+}
+
+.btn-link-card-product {
+  padding: 1rem 3.4rem;
+  position: relative;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  max-width: 30rem;
+  background: $white;
+  margin: unset;
+  font-family: "Roboto Slab", serif;
+  color: $light-yellow;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 1.7rem;
+  @include border-radius(5rem);
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    color: $light-yellow;
+    background: $white;
+  }
+  &:focus {
+    color: $white;
+    outline: none;
+    background: $dark-blue;
+  }
+  &:active {
+    @include transform(scale(0.98));
+    background: $dark-blue;
+  }
+
+  @media (min-width: 992px) {
+    padding: 2rem 5.2rem;
+    width: auto;
+  }
+  @media (min-width: 1200px) {
+  }
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1600px) {
+  }
+  @media (min-width: 1920px) {
+  }
+}
+
+.btn-link-yellow-hidenIcon {
+  padding: 1rem 0rem;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  max-width: 30rem;
+  background: transparent;
+  @media (min-width: 992px) {
+    background: $yellow-primary;
+  }
+  margin: unset;
+  font-family: "Roboto Slab", serif;
+  color: $white;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include border-radius(5rem);
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    color: $white;
+    background: transparent;
+    @media (min-width: 992px) {
+      background: $dark-blue;
+    }
+    .svg-icon-btn {
+      @media (min-width: 992px) {
+        @include transform(translateX(1rem));
+      }
+
+      svg {
+        path {
+          @include transition(all, 0.2s, ease-in-out);
+          fill: $dark-blue;
+        }
+      }
+    }
+  }
+  &:focus {
+    color: $white;
+  }
+  &:active {
+    @include transform(scale(0.98));
+  }
+  span {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+  .svg-icon-btn {
+    display: block;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    margin-top: -0.5rem;
+    @include transition(all, 0.2s, ease-in-out);
+    svg {
+      path {
+        fill: $yellow-primary;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 2.8rem 3.6rem;
+    width: auto;
+
+    .svg-icon-btn {
+      display: none;
+    }
+  }
+  @media (min-width: 1200px) {
+  }
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1600px) {
+  }
+  @media (min-width: 1920px) {
+  }
+}
+
+.check-box-strange {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    background-color: $white;
+    border: 0.2rem solid $blue-primary;
+    @include border-radius(0.5rem);
+    @include transition(all, 0.2s, ease-in-out);
+  }
+  &:hover {
+    input ~ .checkmark {
+      background-color: $light-blue;
+    }
+  }
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-box-strange input:checked ~ .checkmark {
+  background-color: $blue-primary;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark {
+  svg {
+    @include flexbox();
+    width: 70%;
+    max-width: 1.5rem;
+    @include align-items(center);
+    height: 100%;
+    @include transform(scale(0));
+    @include justify-content(center);
+    @include transition(all, 0.2s, ease-in-out);
+    margin: auto;
+    path {
+      fill: $white;
+    }
+  }
+}
+
+/* Show the checkmark when checked */
+.check-box-strange input:checked ~ .checkmark {
+  svg {
+    @include flexbox();
+    @include transform(scale(1));
+  }
+}
+
+.btn-link-blank {
+  padding: 1.7rem 3.4rem;
+  position: relative;
+  border: none;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  max-width: 30rem;
+  background: transparent;
+  margin: unset;
+  font-family: "Roboto Slab", serif;
+  color: $silver;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include border-radius(5rem);
+  @include transition(all, 0.2s, ease-in-out);
+  cursor: pointer;
+  &:hover {
+    color: $dark-blue;
+    background: transparent;
+    .svg-icon-btn {
+      @include transform(translateX(-1rem));
+      svg {
+        path {
+          fill: $yellow-primary;
+        }
+      }
+    }
+  }
+  &:focus {
+    color: $dark-blue;
+    outline: none;
+  }
+  &:active {
+    @include transform(scale(0.98));
+  }
+  .svg-icon-btn {
+    display: none;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    width: 4rem;
+    margin-top: 0.5rem;
+    @include transition(all, 0.2s, ease-in-out);
+    svg {
+      path {
+        fill: $yellow-primary;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 2.8rem 3.6rem;
+    width: auto;
+
+    .svg-icon-btn {
+      display: inline-block;
+    }
+  }
+  @media (min-width: 1200px) {
+  }
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1600px) {
+  }
+  @media (min-width: 1920px) {
+  }
+}

@@ -1,0 +1,224 @@
+@import "mixins";
+@import "variables";
+
+.font-pa {
+  font-family: "Roboto Slab", serif;
+}
+.blue-text {
+  color: $blue-primary;
+  font-weight: bold;
+}
+.white-text {
+  color: $white !important;
+}
+.no-padding-text {
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+.yellow-text {
+  color: $yellow-primary;
+  font-weight: bold;
+}
+p {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-family: "PT Sans", sans-serif;
+  color: #838383;
+  @media (min-width: 992px) {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  @media (min-width: 1366px) {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 2.1rem;
+    line-height: 2.4rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+}
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 3rem;
+  line-height: 4rem;
+  display: block;
+  font-weight: bold;
+  color: $dark-blue;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &.animated {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      @include transform-origin(left);
+
+      background: $blue-primary;
+      -webkit-animation: translateRightToLeft 0.8s forwards 0.5s;
+      -moz-animation: translateRightToLeft 0.8s forwards 0.5s;
+      -ms-animation: translateRightToLeft 0.8s forwards 0.5s;
+      -o-animation: translateRightToLeft 0.8s forwards 0.5s;
+      animation: translateRightToLeft 0.8s forwards 0.5s;
+    }
+  }
+  @media (min-width: 992px) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 4.8rem;
+    line-height: 5.8rem;
+  }
+  @media (min-width: 1366px) {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 5rem;
+    line-height: 7rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 7rem;
+    line-height: 8rem;
+  }
+}
+
+h2 {
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: bold;
+  color: $dark-blue;
+  margin: 0;
+  padding: 0;
+  &.animated {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      @include transform-origin(left);
+      background: $yellow-primary;
+      -webkit-animation: translateRightToLeft 0.8s forwards 0.2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: translateRightToLeft 0.8s forwards 0.2s; /* Firefox < 16 */
+      -ms-animation: translateRightToLeft 0.8s forwards 0.2s; /* Internet Explorer */
+      -o-animation: translateRightToLeft 0.8s forwards 0.2s; /* Opera < 12.1 */
+      animation: translateRightToLeft 0.8s forwards 0.2s;
+    }
+  }
+  @media (min-width: 992px) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 3.8rem;
+    line-height: 4.2rem;
+  }
+  @media (min-width: 1366px) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  display: inline-block;
+  &.animated {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      @include transform-origin(left);
+      background: $yellow-primary;
+      -webkit-animation: translateRightToLeft 0.8s forwards 0.8s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: translateRightToLeft 0.8s forwards 0.8s; /* Firefox < 16 */
+      -ms-animation: translateRightToLeft 0.8s forwards 0.8s; /* Internet Explorer */
+      -o-animation: translateRightToLeft 0.8s forwards 0.8s; /* Opera < 12.1 */
+      animation: translateRightToLeft 0.8s forwards 0.8s;
+    }
+  }
+  font-weight: normal;
+  color: $dark-blue;
+  margin: 0;
+  padding: 0;
+  @media (min-width: 992px) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+  @media (min-width: 1366px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+}
+h6 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: normal;
+  color: $silver;
+  margin: 0;
+  padding: 0;
+  @media (min-width: 992px) {
+    font-size: 1.2rem;
+    line-height: 1.24rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+  }
+  @media (min-width: 1366px) {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+  }
+  @media (min-width: 1920px) {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+}
