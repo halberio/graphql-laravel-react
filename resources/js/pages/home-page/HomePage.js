@@ -4,7 +4,7 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
 const GET_USERS = gql`
-    query getGreeting($page: Int!) {
+    query getUsers($page: Int!) {
         users(page:$page,first:20) {
             data {
                 id
