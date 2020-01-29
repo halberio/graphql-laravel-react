@@ -1,20 +1,16 @@
 import React from "react";
-import {  Menu } from "antd";
-import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 import Logo from "../svg/Logo";
+import {useSelector} from "react-redux";
 
-const Navbar = (props) => {
+const Navbar = () => {
+    const user = useSelector(state => state.authReducer.user);
+    const isLoggedIn = useSelector(state => state.authReducer.isLoggedIn);
   return (
-    <>
-      <Menu mode="horizontal" className="navbar">
-        <Menu.Item key="0" className="navbar-brand">
-          <NavLink to="/" className="brand-link">
-            <Logo />
-          </NavLink>
-        </Menu.Item>
-      </Menu>
-    </>
+      <div className="navbar">
+          <Logo />
+          {isLoggedIn && user ? <p>Hello {user.name}</p> : null}
+      </div>
   );
 };
 export default Navbar;

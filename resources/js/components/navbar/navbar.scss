@@ -2,7 +2,13 @@
 @import "../../stylesheets/mixins";
 
 .navbar {
-    min-height: 7rem;
+    min-height: 6rem;
     @include flexbox();
     @include align-items(center);
+    @include justify-content(space-between);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
 }

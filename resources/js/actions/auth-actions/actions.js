@@ -22,6 +22,18 @@ import {
 
 import AuthServices from "./service";
 
+export const  storeUser = (data) =>{
+    return async dispatch => {
+        dispatch({ type: SIGNIN_REQUEST });
+        try {
+            dispatch({ type: SIGNIN_SUCCESS, payload: data });
+            localStorage.setItem("halber_token", data.token);
+        } catch (e) {
+            dispatch({ type: SIGNIN_FAILURE });
+        }
+    };
+};
+
 export function getAuthUser() {
   return async dispatch => {
     await dispatch({
@@ -44,18 +56,7 @@ export function getAuthUser() {
   };
 }
 
-export function signin(values) {
-  return async dispatch => {
-    dispatch({ type: SIGNIN_REQUEST });
-    try {
-      const response = await AuthServices.signinRequest(values);
-      dispatch({ type: SIGNIN_SUCCESS, payload: response.data });
-      localStorage.setItem("halber_token", response.data.access_token);
-    } catch (e) {
-      dispatch({ type: SIGNIN_FAILURE });
-    }
-  };
-}
+
 
 export function signup(body) {
   return async dispatch => {

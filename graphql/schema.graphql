@@ -10,6 +10,7 @@ type User {
     email: String!
     created_at: DateTime!
     updated_at: DateTime!
+    password: String! @rules(apply: ["min:4"]) @bcrypt
 }
 
 type Query {
@@ -17,12 +18,54 @@ type Query {
     user(id: ID @eq): User @find(model: "App\\User")
 }
 
+
+
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+type RegisterResponse {
+    status: String!
+    message: String!
+    redirect: String!
+}
+type LoginResponse {
+    user: User
+    token: String
+}
+type LogoutResponse {
+    status: String!
+    message: String
+}
+input RegisterInput {
+    name: String @rules(apply: ["required"])
+    email: String @rules(apply: ["required"])
+    password: String @rules(apply: ["required"])
+}
+
 type Mutation {
+    login(data: LoginInput): LoginResponse! @field(resolver: "App\\GraphQL\\Resolvers\\LoginResolver@resolve")
+
+    register(data: RegisterInput!) : RegisterResponse! @field(resolver: "App\\GraphQL\\Resolvers\\RegisterResolver@resolve")
+
+    logout: LogoutResponse! @field(resolver: "App\\GraphQL\\Resolvers\\LogoutResolve@resolve")
+
     createUser(
         name: String! @rules(apply: ["required", "min:4"]),
-        email: String! @rules(apply: ["email", "unique:users-list"]),
+        email: String! @rules(apply: ["email", "unique:users"]),
         password: String! @rules(apply: ["min:4"]) @bcrypt
-    ): User! @create
+    ): User @create(model: "App\\User")
+
+    updateUser(
+        id: ID @rules(apply: ["required"])
+        name: String
+        email: String @rules(apply: ["email"])
+    ): User @update(model: "App\\User")
+
+    deleteUser(
+        id: ID! @rules(apply: ["required"])
+    ): User @delete(model: "App\\User")
 }
 
 
