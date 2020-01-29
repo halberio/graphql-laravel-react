@@ -13,11 +13,11 @@ class UpdateSocialProviderUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users-list', function (Blueprint $table) {
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
 
-            if (!Schema::hasColumn('users', 'avatar')) {
+            if (!Schema::hasColumn('users-list', 'avatar')) {
                 $table->string('avatar')->nullable();
             }
         });
@@ -30,7 +30,7 @@ class UpdateSocialProviderUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users-list', function (Blueprint $table) {
             $table->dropColumn('provider');
             $table->dropColumn('provider_id');
             $table->dropColumn('avatar');

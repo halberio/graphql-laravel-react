@@ -20,7 +20,7 @@ type Query {
 type Mutation {
     createUser(
         name: String! @rules(apply: ["required", "min:4"]),
-        email: String! @rules(apply: ["email", "unique:users"]),
+        email: String! @rules(apply: ["email", "unique:users-list"]),
         password: String! @rules(apply: ["min:4"]) @bcrypt
     ): User! @create
 }

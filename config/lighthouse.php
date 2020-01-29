@@ -116,7 +116,7 @@ return [
     | Pagination
     |--------------------------------------------------------------------------
     |
-    | Limits the maximum "count" that users may pass as an argument
+    | Limits the maximum "count" that users-list may pass as an argument
     | to fields that are paginated with the @paginate directive.
     | A setting of "null" means the count is unrestricted.
     |
